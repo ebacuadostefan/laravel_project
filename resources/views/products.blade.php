@@ -31,12 +31,39 @@
                         <tbody>
                             <tr class="border-b border-gray-200 hover:bg-gray-100">
                                 <td class="py-3 px-6">
-                                    <img src="" class="w-10 h-10 rounded-full">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsioMpcDApG3XLt67LZ4w9c-ecDl6jCbtvnA&s" class="w-10 h-10 rounded-full">
                                 </td>
-                                <td class="py-3 px-6">Product Name</td>
-                                <td class="py-3 px-6">Category</td>
-                                <td class="py-3 px-6">$Price</td>
-                                <td class="py-3 px-6">Stock</td>
+                                <td class="py-3 px-6">Molly Fish</td>
+                                <td class="py-3 px-6">Pish</td>
+                                <td class="py-3 px-6">500 trio</td>
+                                <td class="py-3 px-6">unli</td>
+                                <td class="py-3 px-6 flex space-x-2">
+                                    <a title="EDIT" href="#" class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600 transition duration-300">
+                                        EDIT
+                                    </a>
+                                    <form action="#" method="POST" class="inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button
+                                            type="submit"
+                                            class="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600 transition duration-300"
+                                            onclick="return confirm('Are you sure you want to delete this product?');">
+                                            DELETE
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                        <tbody>
+                            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                <td class="py-3 px-6">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjiw7qrENPYEFDvnkeT4jCXJ3pF5iGKMpFiQ&s" class="w-10 h-10 rounded-full">
+                                </td>
+                                <td class="py-3 px-6">Cray Fish</td>
+                                <td class="py-3 px-6">Phylum: Arthropoda</td>
+                                <td class="py-3 px-6">₱3,500 per kilogram</td>
+                                <td class="py-3 px-6">unli</td>
                                 <td class="py-3 px-6 flex space-x-2">
                                     <a title="EDIT" href="#" class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600 transition duration-300">
                                         EDIT
