@@ -15,7 +15,7 @@
                              alt="Image Preview" style="max-width: 64px;" />
                     </div>
 
-                    <form method="POST" action="" enctype="multipart/form-data" class="p-4">
+                    <form method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data" class="p-4">
                         @csrf
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div>
@@ -29,20 +29,23 @@
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                             </div>
                             <div>
-                                <label for="product_category" class="block text-sm font-medium text-gray-700">Category</label>
-                                <select id="product_category" name="product_category"
+                                <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                                <select id="category" name="category"
                                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     <option value="" disabled selected>Select a category</option>
+                                    @foreach ($categories as $index => $category)
+                                        <option value="{{ $category->category_id }}">{{$index + 1 }}. {{ $category->categories_name }} </option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div>
-                                <label for="product_price" class="block text-sm font-medium text-gray-700">Price</label>
-                                <input type="text" id="product_price" name="product_price"
+                                <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
+                                <input type="text" id="price" name="price"
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                             </div>
                             <div>
-                                <label for="product_stock" class="block text-sm font-medium text-gray-700">Stock</label>
-                                <input type="text" id="product_stock" name="product_stock"
+                                <label for="stock" class="block text-sm font-medium text-gray-700">Stock</label>
+                                <input type="text" id="stock" name="stock"
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                             </div>
                         </div>
