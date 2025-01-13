@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
        
-        $products = Products::with('category')->get();
+        $products = Products::with('category')->where('is_deleted', false)->get();
         return view('products', compact('products'));
     }
     /**
@@ -45,18 +45,16 @@ class ProductController extends Controller
 
     if($request->hasFile('product_image')){
         $filenameWithExtensions = $request->file('product_image')->getClientOriginalName();
-       $filenmae = pathinfo($filenameWithExtensions, PATHINFO_FILENAME);
+       $filename = pathinfo($filenameWithExtensions, PATHINFO_FILENAME);
        $extensions = $request->file('product_image')->getClientOriginalExtension();
        $filenameToStore = $filename . '-' . $extensions;
        $request->file('product_image')->storeAs('Uploads/Products Images',$filenameToStore);
        $validated['product_image'] = $filenameToStore;
     }
 
-    $product = Product::create($validated);
+    $product = Products::create($validated);
 
-    $product = Product::create($validated);
-
-    if (!$products) {
+    if (!$product) {
         return redirect()->route('products')->with([
             'message' => 'Unable to add product',
             'type' => 'error',

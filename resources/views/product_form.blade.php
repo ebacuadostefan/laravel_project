@@ -20,7 +20,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div>
                                 <label for="product_image" class="block text-sm font-medium text-gray-700">Image</label>
-                                <input type="file" id="product_image" name="product_image"
+                                <input type="file" id="product_image" name="product_image" accept="image/png, image/gif, image/jpeg"
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                             </div>
                             <div>
@@ -44,8 +44,8 @@
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                             </div>
                             <div>
-                                <label for="stock" class="block text-sm font-medium text-gray-700">Stock</label>
-                                <input type="text" id="stock" name="stock"
+                                <label for="stocks" class="block text-sm font-medium text-gray-700">Stock</label>
+                                <input type="text" id="stocks" name="stocks"
                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                             </div>
                         </div>
