@@ -78,17 +78,20 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $product_id)
     {
-        //
+        $product = Products::findorfail($product_id);
+        $categories = Categories::where('is_deleted', false)->get();
+
+        return view('product_form', compact('product', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $product_id)
     {
-        //
+        $product = Products::findorfail(product_id);
     }
 
     /**
@@ -96,7 +99,7 @@ class ProductController extends Controller
      */
     public function destroy(string $product_id)
     {
-        $product = Products::findorfail($product_id);
+        $product = Products::where('product_id', $product_id)->first();
 
         $product->is_deleted = true;
 
