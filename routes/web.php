@@ -33,7 +33,7 @@ Route::prefix('Admin')
         Route::get('Products/Create/New', [ProductController::class, 'create'])->name('product.create');
         Route::post('Products/Create/New/Store', [ProductController::class, 'store'])->name('product.store');
         Route::get('Product/Edit/{product_id}', [ProductController::class, 'edit'])->name('product.edit');
-        Route::put('Products/Edit/{product_id/}Update', [ProductController::class, 'update'])->name('product.update');
+        Route::put('Products/Edit/{product_id}/Update', [ProductController::class, 'update'])->name('product.update');
         Route::delete('Products/Delete/{product_id}', [ProductController::class, 'destroy'])->name('product.delete');
         
         
